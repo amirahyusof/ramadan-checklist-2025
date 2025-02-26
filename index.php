@@ -7,7 +7,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>Ramadan Daily Checklist</title>
     <script src="http://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -62,10 +62,6 @@
         <div id="progress-bar" class="bg-green-500 h-2.5 rounded-full w-0"></div>
       </div>
 
-      <button id="download-pdf" class="mt-4 bg-green-500 text-white py-2 px-4 w-full rounded">
-        📄 Download Checklist as PDF
-      </button>
-
       <div class="mt-6">
         <label class="block font-semibold">💰 Sadaqah Goal:</label>
         <input type="number" id="sadaqah-goal" class="w-full border p-2 mt-1 text-[#2D336B]" placeholder="Enter goal in RM">
@@ -73,6 +69,10 @@
         <input type="number" id="sadaqah-given" class="w-full border p-2 mt-1 text-[#2D336B]" placeholder="Amount given today">
         <p>Remaining: <span id="sadaqah-remaining">0</span></p>
       </div>
+
+      <button id="download-pdf" class="mt-4 bg-green-500 hover:bg-green-400 text-white py-2 px-4 w-full rounded">
+        📄 Download Checklist as PDF
+      </button>
 
       <button id="reset"  class="mt-4 bg-red-500 text-white py-2 px-4 w-full rounded">Reset Checklist</button>
       

@@ -37,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const doc = new jsPDF();
 
         // Add Title
-        doc.setFont("helvetica", "bold");
+        doc.setFont("montserrat", "bold");
         doc.setTextColor(40, 40, 120);
         doc.setFontSize(18);
-        doc.text("🌙 Ramadan Daily Checklist", 10, 20);
+        doc.text("Ramadan Daily Checklist", 10, 20);
 
         // Get current date from page
         let dateText = document.querySelector(".text-center p:last-child").innerText;
@@ -48,16 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
         doc.setTextColor(60, 60, 60);
         doc.text(dateText, 10, 30);
 
-        //Draw a separator line
-        doc.setDrawColor(150,150, 150);
-        doc.line(10,35, 200, 25);
 
         // Add Checklist Items
         let tasks = document.querySelectorAll(".task");
         let yPosition = 45;
         tasks.forEach(task => {
-            let isChecked = task.checked ? "[✔] " : "[ ] ";
-            doc.taskText = task.parentElement.innerText.trim();
+            let isChecked = task.checked ? "[Done] " : "[X] ";
+            let taskText = task.parentElement.innerText.trim();
 
             if(task.checked){
                 doc.setTextColor(34, 139, 34);
@@ -66,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
 
-            doc.setFont("helvetica", "normal");
+            doc.setFont("montserrat", "normal");
             doc.text(isChecked + taskText, 10, yPosition);
             yPosition += 10;
         });
@@ -78,11 +75,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         doc.setFontSize(14);
         doc.setTextColor(0, 0, 0);
-        doc.text("💰 Sadaqah Tracker", 10, yPosition + 10);
+        doc.text("Sadaqah Tracker", 10, yPosition + 10);
 
         doc.setFontSize(12);
         doc.setTextColor(60, 60, 60);
-        doc.text(`Goal: $${sadaqahGoal} | Given: $${sadaqahGiven} | Remaining: $${sadaqahRemaining}`, 10, yPosition + 20);
+        doc.text(`Goal: RM${sadaqahGoal} | Given: RM${sadaqahGiven} | Remaining: RM${sadaqahRemaining}`, 10, yPosition + 20);
 
         // Save as PDF
         doc.save("Ramadan_Checklist.pdf");
@@ -138,7 +135,7 @@ function checkCompletion() {
     let sadaqahGiven = document.getElementById("sadaqah-given").value || 0;
     let sadaqahRemaining = sadaqahGoal - sadaqahGiven;
 
-    if (sadaqahRemaining <= 0 && sadaqahGoal > 0) {
+    if (sadaqahRemaining == 0 && sadaqahGoal > 0) {
         launchConfetti();
     }
 }
