@@ -10,6 +10,10 @@
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <title>Ramadan Daily Checklist</title>
     <script src="http://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2"></script>
+
+
     <link>
   </head>
   <body class="bg-[#A9B5DF] text-[#FFF2F2]">
@@ -57,6 +61,10 @@
       <div class="w-full bg-[#2D336B] rounded-full h-2.5 mt-2">
         <div id="progress-bar" class="bg-green-500 h-2.5 rounded-full w-0"></div>
       </div>
+
+      <button id="download-pdf" class="mt-4 bg-green-500 text-white py-2 px-4 w-full rounded">
+        📄 Download Checklist as PDF
+      </button>
 
       <div class="mt-6">
         <label class="block font-semibold">💰 Sadaqah Goal:</label>
