@@ -17,7 +17,7 @@
     <link>
   </head>
   <body class="bg-[#A9B5DF] text-[#FFF2F2]">
-    <div class="max-w-lg mx-auto mt-10 bg-[#7886C7] shadow-lg rounded-lg p-6">
+    <div class="max-w-lg mx-auto p-4 bg-[#7886C7] shadow-lg rounded-lg mt-6 sm:mt-10 w-full">
       <h1 class="text-2xl font-bold text-center mb-2">🌙 Ramadan Daily Checklist</h1>
       <div class="text-center rounded mb-4">
           <p class="text-lg font-semibold">📅 Today’s Date: </p>
@@ -70,7 +70,7 @@
         <p>Remaining: <span id="sadaqah-remaining">0</span></p>
       </div>
 
-      <button id="download-pdf" class="mt-4 bg-green-500 hover:bg-green-400 text-white py-2 px-4 w-full rounded">
+      <button id="download-pdf" class="mt-4 bg-green-500 hover:bg-green-400 text-white py-2 px-4 w-full rounded active:scale-95">
         📄 Download Checklist as PDF
       </button>
 
@@ -78,7 +78,7 @@
       
       <div class="mt-6 p-4 bg-[#7886C7] rounded text-center" >
         <h2 class="texy-lg font-semibold">📖 Ramadan Dua of the Day</h2>
-        <p class="mt-2 italic"><?= include('data/duas.php'); echo getRandomDua() ?></p>
+        <p class="mt-2 italic"><?= include 'data/duas.php'; echo getRandomDua() ?></p>
       </div>
     </div>
 
